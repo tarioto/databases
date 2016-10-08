@@ -7,7 +7,9 @@ module.exports = {
       var query = '';
       // make our mysql query
       if (room !== 'lobby') {
-        query = 'SELECT * FROM messages WHERE ';
+        selection = 'SELECT * FROM messages INNER JOIN rooms';
+        on = 'ON';
+        query = selection + on;
       } else {
         query = 'SELECT * FROM messages';
       }
