@@ -12,7 +12,7 @@ module.exports = {
           });
       })
       .then(function(data) {
-        console.log('data: ', JSON.stringify({results: data}));
+        console.log('controller data: ', {results: data});
         res.send(JSON.stringify({results: data}));
       });
     }, // a function which handles a get request for all messages

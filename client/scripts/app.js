@@ -64,6 +64,9 @@ var app = {
       data: { room: app.roomname },
       contentType: 'application/json',
       success: function(data) {
+        // console.log(data);
+        // debugger;
+        data = JSON.parse(data);
         // Don't bother if we have nothing to work with
         if (!data.results || !data.results.length) { return; }
 
