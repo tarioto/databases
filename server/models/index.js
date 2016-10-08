@@ -2,7 +2,17 @@ var db = require('../db');
 
 module.exports = {
   messages: {
-    get: function () {}, // a function which produces all the messages
+    get: function (room) {
+      // intitialize query
+      var query = '';
+      // make our mysql query
+      if (room !== 'lobby') {
+        query = 'SELECT * FROM messages WHERE ';
+      } else {
+        query = 'SELECT * FROM messages';
+      }
+      // return the data
+    }, // a function which produces all the messages
     post: function () {} // a function which can be used to insert a message into the database
   },
 
