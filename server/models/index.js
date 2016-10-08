@@ -31,6 +31,8 @@ module.exports = {
       })
       .then(function(data) {
         return data;
+      })
+      .catch(function(error) {
       });
     }, // a function which produces all the messages
     post: function () {} // a function which can be used to insert a message into the database
