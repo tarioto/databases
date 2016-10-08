@@ -4,11 +4,10 @@ module.exports = {
   messages: {
     get: function (req, res) {
       // somehow extract which room the get request was called from
-      var room;
+      var room; // req.body
       // call models.messages.get()
       var data = models.messages.get(room);
       // attach to res
-      res.writeHead(200, {'Content-Type': 'application/json'});
       res.end(JSON.stringify(data));
       // return res
       return res;
