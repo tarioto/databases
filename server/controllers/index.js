@@ -22,7 +22,18 @@ module.exports = {
   users: {
     // Ditto as above
     get: function (req, res) {},
-    post: function (req, res) {}
+    post: function (req, res) {
+      return new Promise(function(resolve, reject) {
+        // console.log('req: ', req);
+        return models.users.post(req.body.username)
+          .then(function(data) {
+            resolve(data);
+          });
+      })
+      .then(function(data) {
+        console.log(JSON.stringify(data));
+      });
+    }
   }
 };
 
